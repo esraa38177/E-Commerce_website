@@ -5,3 +5,13 @@ itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.2
 Werkzeug==3.1.3
+User authentication (login, registration, and account management)
+Product pages with detailed information
+Shopping cart functionality
+Checkout process
+Payment integration (e.g., PayPal, Stripe)
+Order tracking
+Admin panel to manage products, users, and orders
+Product search and filtering
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.5

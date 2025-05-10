@@ -1,0 +1,20 @@
+<h2>{{ product.name }}</h2>
+<img src="{{ url_for('static', filename='images/' + product.image_file) }}" alt="{{ product.name }}">
+<p>{{ product.description }}</p>
+<p>${{ product.price }}</p>
+
+<button onclick="addToCart({ product.id })">Add to Cart</button>
+
+<script>
+    function addToCart(productId) {
+        
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({id: productId, name: "{{ product.name }}", price: {{ product.price }}});
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+   
+        let cartCount = cart.length;
+        localStorage.setItem('cartCount', cartCount);
+        document.getElementById('cart-counter').innerText = cartCount;
+    }
+</script>

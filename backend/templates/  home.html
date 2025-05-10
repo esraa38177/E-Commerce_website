@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Home - My Supermarket{% endblock %}
+
+{% block content %}
+<section class="products">
+    {% for product in products %}
+    <div class="product-card">
+        <a href="{{ url_for('main.product_detail', product_id=product.id) }}">
+            <img src="{{ url_for('static', filename='images/' ~ product.image_file) }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+        </a>
+        <p>{{ product.description }}</p>
+        <p><strong>${{ product.price }}</strong></p>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

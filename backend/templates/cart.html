@@ -1,0 +1,18 @@
+<h2>Your Cart</h2>
+<div id="cart-items">
+    <!-- Cart items will be dynamically added here -->
+</div>
+
+<button onclick="window.location.href='/checkout'">Proceed to Checkout</button>
+
+<script>
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.textContent = `${item.name} - $${item.price}`;
+        cartItemsContainer.appendChild(itemDiv);
+    });
+</script>
